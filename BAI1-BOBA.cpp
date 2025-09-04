@@ -4,36 +4,43 @@
 #include <vector>
 using namespace std;
 
-int countMaxTriplet(const string& s) {
-    unordered_map<string, int> freq;
-    int maxCount = 0;
+// hàm đếm số lần xuất hiện 
+int countMaxTriplet(const string& s) 
+{
+    unordered_map<string, int> freq; // lưu số lần xuất hiện của từng bộ 3 
+    int maxCount = 0; // biến đếm 
 
-    for (size_t i = 0; i + 2 < s.length(); ++i) {
-        string triplet = s.substr(i, 3);
-        freq[triplet]++;
-        maxCount = max(maxCount, freq[triplet]);
+    for (size_t i = 0; i + 2 < s.length(); ++i) // vòng lặp duyệt qua chuỗi lấy từng bộ 3 liên tiếp
+    {
+        string triplet = s.substr(i, 3); // lấy chuỗi bộ 3 
+        freq[triplet]++; // đếm số lần xuất hiện 
+        maxCount = max(maxCount, freq[triplet]); // cập nhật biến đếm
     }
 
-    return maxCount;
+    return maxCount; // trả kết quả biến đếm lớn nhất 
 }
 
-int main() {
+int main() 
+{
     int T;
-    cin >> T;
-    cin.ignore(); 
+    cin >> T; // nhập vào số lượng dãy text T
+    cin.ignore(); // xoá ký tự xuống dòng 
 
-    vector<string> inputs(T);
-    for (int i = 0; i < T; ++i) {
-        getline(cin, inputs[i]);
+    vector<string> inputs(T); // mảng động lưu các chuỗi 
+    for (int i = 0; i < T; ++i) 
+    {
+        getline(cin, inputs[i]); // nhập các các chuỗi 
     }
 
-    vector<int> results(T);
-    for (int i = 0; i < T; ++i) {
-        results[i] = countMaxTriplet(inputs[i]);
+    vector<int> results(T); // mãng động lưu kết quả đếm của các chuổi 
+    for (int i = 0; i < T; ++i) 
+    {
+        results[i] = countMaxTriplet(inputs[i]); // gọi hàm tính kết quả 
     }
 
-    for (int result : results) {
-        cout << result << endl;
+    for (int result : results) 
+    {
+        cout << result << endl; // in ra màn hình 
     }
 
     return 0;
