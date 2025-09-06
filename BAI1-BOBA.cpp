@@ -22,7 +22,7 @@ int countMaxTriplet(const string& s)
 
 int main() 
 {
-    int T;
+    int T; // biến text T
     cin >> T; // nhập vào số lượng dãy text T
     cin.ignore(); // xoá ký tự xuống dòng 
 
@@ -40,7 +40,7 @@ int main()
 
     for (int result : results) 
     {
-        cout << result << endl; // in ra màn hình 
+        cout << result << endl; // in ra màn hình
     }
 
     return 0;
