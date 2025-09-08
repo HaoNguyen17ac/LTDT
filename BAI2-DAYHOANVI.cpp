@@ -40,7 +40,8 @@ int main()
     vector<bool> appeared(N + 1, false);
     for (int i = 0; i < N; ++i) 
     {
-        if (A[i] < 1 || A[i] > N || appeared[A[i]]) {
+        if (A[i] < 1 || A[i] > N || appeared[A[i]]) 
+        {
             cout << "NO" << endl;
             return 0;
         }
