@@ -6,8 +6,8 @@ using namespace std;
 // Hàm đếm số lần xuất hiện của bộ ba xuất hiện nhiều nhất
 int countMaxTriplet(const string& s) 
 {
-    vector<string> triplets; // Lưu các bộ ba đã gặp
-    vector<int> counts; // Lưu số lần xuất hiện tương ứng
+    vector<string> triplets; // Mảng động lưu các bộ ba đã gặp
+    vector<int> counts; // Mảng động lưu số lần xuất hiện tương ứng
     int maxCount = 0; // Biến đếm số lần xuất hiện lớn nhất
 
     for (size_t i = 0; i + 2 < s.length(); ++i) 
@@ -17,7 +17,7 @@ int countMaxTriplet(const string& s)
 
         for (size_t j = 0; j < triplets.size(); ++j) 
         {
-            if (triplets[j] == triplet) // 
+            if (triplets[j] == triplet) 
             {
                 counts[j]++; // Tăng số lần xuất hiện của bộ bà trừng lặp 
                 maxCount = max(maxCount, counts[j]); // Cập nhật số lần xuất hiện lớn nhất
@@ -28,7 +28,7 @@ int countMaxTriplet(const string& s)
 
         if (!found) // Nếu chưa gặp bộ ba, thêm bộ ba mới vào danh sách
         {
-            triplets.push_back(triplet); //
+            triplets.push_back(triplet);
             counts.push_back(1);
             maxCount = max(maxCount, 1); // Cập nhật số lần xuất hiện lớn nhất
         }
